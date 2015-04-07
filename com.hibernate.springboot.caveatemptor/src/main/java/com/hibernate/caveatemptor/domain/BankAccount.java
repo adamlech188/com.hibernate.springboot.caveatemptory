@@ -1,12 +1,22 @@
 package com.hibernate.caveatemptor.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 @AttributeOverride(name = "owner", column = @Column(name = "BA_OWNER", nullable = false))
-public class BankAccount extends BillingDetails {
+public class BankAccount extends BillingDetails implements Serializable {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Column(name="ACCOUNT")
 	private String account;

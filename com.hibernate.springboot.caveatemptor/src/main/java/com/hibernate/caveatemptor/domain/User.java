@@ -1,19 +1,23 @@
 package com.hibernate.caveatemptor.domain;
 
+import java.io.Serializable;
 import java.util.StringTokenizer;
 
 import javax.naming.InvalidNameException;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 @Entity(name="USERS")
-public class User {
+public class User implements Serializable {
 
+	@Id
 	@Column(name="first_name")
 	private String firstname; 
 	
+	@Id
 	@Column(name="last_name")
 	private String lastname; 
 	

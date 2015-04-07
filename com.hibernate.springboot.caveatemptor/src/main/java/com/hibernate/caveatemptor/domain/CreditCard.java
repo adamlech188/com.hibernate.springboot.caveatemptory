@@ -1,5 +1,7 @@
 package com.hibernate.caveatemptor.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 @AttributeOverride(name="owner" , column = 
 @Column(name = "CC_OWNER", nullable=false))
-public class CreditCard extends BillingDetails{
+public class CreditCard extends BillingDetails implements Serializable{
 
 	@Id
 	@Column(name="CREDIT_CARD_ID")

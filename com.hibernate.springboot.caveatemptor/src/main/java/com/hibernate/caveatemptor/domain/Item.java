@@ -31,7 +31,7 @@ public class Item {
 	@Column(name="description")
 	private String description; 
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="ITEMS")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="id")
 	private Set<Category> categoriers = new HashSet<Category>(); 
 	
 	public Item() { 

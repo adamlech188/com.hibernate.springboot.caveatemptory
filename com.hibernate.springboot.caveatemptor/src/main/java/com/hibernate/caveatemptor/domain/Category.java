@@ -19,6 +19,7 @@ public class Category {
 	@Id
 	@GeneratedValue
 	private Long id; 
+	
 	@Column(name="NAME")
 	private String name;
 
@@ -26,7 +27,7 @@ public class Category {
 	@JoinColumn(name="parent_category")
 	private Category parentCategory;
 	
-	@OneToMany(fetch=FetchType.LAZY,  mappedBy="Categories")
+	@OneToMany(fetch=FetchType.LAZY,  mappedBy="id")
 	private Set<Category> childCategories = new HashSet<>();
 
 	public Category() {
