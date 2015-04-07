@@ -4,25 +4,22 @@ import java.io.Serializable;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@AttributeOverride(name="owner" , column = 
-@Column(name = "CC_OWNER", nullable=false))
-public class CreditCard extends BillingDetails implements Serializable{
+@DiscriminatorValue("CC")
+public class CreditCard extends BillingDetails {
 
-	@Id
-	@Column(name="CREDIT_CARD_ID")
-	private Long id = null; 
 	
-	@Column(name="NUMBER")
+	@Column(name="CC_NUMBER")
 	private String number; 
 	
-	@Column(name="EXPMONTH")
+	@Column(name="CC_EXPMONTH")
 	private String expMonth; 
 	
-	@Column(name = "EXPYEAR")
+	@Column(name = "CC_EXPYEAR")
 	private String expYear; 
 	
 	public CreditCard() {
