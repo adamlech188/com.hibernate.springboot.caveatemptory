@@ -9,7 +9,7 @@ import org.hibernate.annotations.Parent;
 public class Image {
 	
 	@Parent
-	Item item; 
+	private Item item; 
 	
 	@Column(length=255, nullable = false)
 	private String name;
@@ -56,6 +56,14 @@ public class Image {
 
 	public void setSizeY(Integer sizeY) {
 		this.sizeY = sizeY;
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
 }

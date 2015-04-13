@@ -17,7 +17,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 @Import(RepositoryRestMvcConfiguration.class)
 @EnableJpaRepositories("com.hibernate.caveatemptor.repositories")
 @EnableAutoConfiguration
-@EntityScan("com.hibernate.caveatemptor.domain")
+@EntityScan("com.hibernate.caveatemptor.examples")
 @ComponentScan
 public class Application extends SpringBootServletInitializer {
 	
