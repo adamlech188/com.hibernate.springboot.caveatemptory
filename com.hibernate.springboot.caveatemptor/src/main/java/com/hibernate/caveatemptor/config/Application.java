@@ -1,4 +1,4 @@
-package com.hibernate.caveatemptory.config;
+package com.hibernate.caveatemptor.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -15,18 +15,19 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 @Configuration
 @PropertySource("file:/my_etc/com.hibernate.caveatemptor/application.properties")
 @Import(RepositoryRestMvcConfiguration.class)
-@EnableJpaRepositories("com.hibernate.caveatemptor.repositories")
+@EnableJpaRepositories(basePackages = { "com.hibernate.caveatemptor.repositories" })
 @EnableAutoConfiguration
 @EntityScan("com.hibernate.caveatemptor.examples")
 @ComponentScan
 public class Application extends SpringBootServletInitializer {
-	
+
 	@Override
-	public SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Application.class); 
+	public SpringApplicationBuilder configure(
+			SpringApplicationBuilder application) {
+		return application.sources(Application.class);
 	}
-	
+
 	public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+		SpringApplication.run(Application.class, args);
+	}
 }
